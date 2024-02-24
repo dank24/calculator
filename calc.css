@@ -1,0 +1,52 @@
+*{
+    box-sizing: border-box;
+    margin: none;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+#container{
+    height: 60%;
+    width: 40%;
+    border: 1px;
+}
+#appHeader{
+    border: 1px solid red;
+    height: 40%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.topScreen{
+    height: 33%;
+    border: 1px solid black;
+}
+.midScreen{
+    height: 33%;
+    border: 1px solid black;
+}
+.bottomScreen{
+    height: 33%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+#appBody{
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 20% 20% 20% 20% 20 ;
+    border: 1px solid yellow;
+    height: 60%;
+    width: 100%;
+}
+#equalsBtn{
+    grid-row: 4 / 6;
+    grid-column: 5 / 6;
+}
