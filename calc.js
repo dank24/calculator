@@ -36,10 +36,16 @@ function display() {
             if(e.id !== '+' && e.id !== '-' && e.id !== 'x' && e.id !== '/'){
                 v.push(e.id)
                 v1 = v.join('')
+                
+                
+                if(ope === ''){
+                    op1 = v1
+                } else if(ope !== ''){
+                    op2 = v1 
+                } 
+
             } else {
                 oper = e.id
-                ope = oper
-                v = []
             }
             bottomScreen.textContent = v1
             topScreen.textContent = `${op1} ${ope} ${op2}`
@@ -51,7 +57,8 @@ function display() {
 function storeValues() {
     btns.forEach(e =>{
         e.addEventListener('click', () =>{
-        
+            
+         
             if(ope === ''){
                 op1 = v1
             } else if(ope !== ''){
@@ -67,15 +74,17 @@ function storeValues() {
 //calculation
 function calculate() {
 
-    storeValues()
+
     display()
     operBtns.forEach(e =>{
         e.addEventListener('click', () =>{
+            ope = e.id
+            v = []
             e.style.backgroundColor = 'red'
             if(op2 && ope && op2) {
                 let results = operation(op1,ope,op2)
                 midScreen.textContent = results
-                topScreen.textContent = `${op1} : ${ope} : ${op2}`
+             
             }
         })
     })
